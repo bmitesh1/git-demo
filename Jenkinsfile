@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh ''' cat /etc/hosts'''
+                sh ''' cat /etc/os-release'''
             }
         }
     }
