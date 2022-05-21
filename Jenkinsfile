@@ -4,14 +4,16 @@ pipeline {
     stages {
         stage ('EmailApproval'){
         
-                    //def jobName = currentBuild.fullDisplayName
-            environment{
+                    
+            
+            steps{
+                script{
+                    def jobName = currentBuild.fullDisplayName
+            
                     def mailToRecipients = "bansal.mitesh6@gmail.com"
                     def useremail = "bansal.mitesh@gmail.com"
                     def user = "bansal,mitesh"
                     def userAborted = false
-            }
-            steps{
                 emailext body: '''
                         Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
                     ''',    
@@ -32,7 +34,7 @@ pipeline {
                     }
             }
         }
-            
+        }    
   
         stage('Hello') {
             steps {
@@ -41,3 +43,4 @@ pipeline {
         }
     }
 }
+
