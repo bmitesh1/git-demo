@@ -41,6 +41,10 @@ pipeline {
                 sh ''' cat /etc/os-release'''
             }
         }
-    }
+     }
+    post {
+    success {
+      emailext to:"bansal.mitesh@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+ }
 }
 
