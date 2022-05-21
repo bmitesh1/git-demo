@@ -46,5 +46,6 @@ pipeline {
     success {
       emailext to:"bansal.mitesh@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
  }
-}
+    }
+    }
 
