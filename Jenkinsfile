@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('EmailApproval'){
         
-                    def jobName = currentBuild.fullDisplayName
+                    //def jobName = currentBuild.fullDisplayName
                     def mailToRecipients = "bansal.mitesh6@gmail.com"
                     def useremail = "bansal.mitesh@gmail.com"
                     def user = "bansal,mitesh"
@@ -13,7 +13,7 @@ pipeline {
                         Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
                     ''',    
                         mimeType: 'text/html',
-                        subject: "[Jenkins] ${jobName} Build Approval Request",
+                        subject: "[Jenkins] ${JOB_NAME} Build Approval Request",
                         from: "${useremail}",
                         to: "${mailToRecipients}",
                         recipientProviders: [[$class: 'CulpritsRecipientProvider']]
