@@ -10,7 +10,7 @@ pipeline {
                 script{
                     def jobName = currentBuild.fullDisplayName
             
-                    def mailToRecipients = "scbansal1501@gmail.com"
+                    def mailToRecipients = "bansal.mitesh@gmail.com"
                     def useremail = "bansal.mitesh@gmail.com"
                     def user = "bansal,mitesh"
                     def userAborted = false
