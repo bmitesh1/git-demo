@@ -11,7 +11,8 @@ pipeline {
                     def user = "bansal,mitesh"
                     def userAborted = false
             }
-                    emailext body: '''
+            steps{
+                emailext body: '''
                         Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
                     ''',    
                         mimeType: 'text/html',
@@ -29,8 +30,9 @@ pipeline {
                         echo "SYSTEM aborted, but looks like timeout period didn't complete. Aborting."
                         error('Deployment not approved')
                     }
-        
+            }
         }
+            
   
         stage('Hello') {
             steps {
