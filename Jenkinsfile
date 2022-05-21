@@ -5,10 +5,12 @@ pipeline {
         stage ('EmailApproval'){
         
                     //def jobName = currentBuild.fullDisplayName
+            environment{
                     def mailToRecipients = "bansal.mitesh6@gmail.com"
                     def useremail = "bansal.mitesh@gmail.com"
                     def user = "bansal,mitesh"
                     def userAborted = false
+            }
                     emailext body: '''
                         Please go to console output of ${BUILD_URL}input to approve or Reject.<br>
                     ''',    
